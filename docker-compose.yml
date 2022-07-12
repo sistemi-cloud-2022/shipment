@@ -1,0 +1,24 @@
+version: '3.3'
+
+services:
+  shipmentService:
+    depends_on:
+      - shipment_db
+    image: shipment:latest
+    restart: always
+    ports:
+      - 9091:9091
+    environment:
+      SERVER_PORT: 9091
+      MYSQL_HOST: shipment_db
+      APP_SAMPLESERVICE: "http://sampleService:9092"
+      APP_BIOBANKSERVICE: "http://biobankService:9093"
+  
+  shipment_db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: shipment_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin

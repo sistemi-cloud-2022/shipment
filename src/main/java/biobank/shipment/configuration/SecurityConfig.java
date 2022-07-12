@@ -42,7 +42,6 @@ public class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter
         super.configure(http);
         http
             .authorizeRequests()
-            .antMatchers("/sprecsample/*").hasRole("admin")
             .anyRequest().permitAll();
     }
 }
