@@ -1,3 +1,10 @@
+-- SET FOREIGN_KEY_CHECKS=0;
+-- truncate static_shipments_status;
+-- truncate static_shipments_condition;
+-- truncate static_shipments_boxes_status;
+-- truncate shipment_boxes;
+-- SET FOREIGN_KEY_CHECKS=1;
+
 /*
     Insert static_shipments_status records
 */
