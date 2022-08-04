@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import javax.validation.Valid;
 
+import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpMethod;
@@ -37,7 +38,7 @@ public class ShipmentBoxeController {
 	String sampleServicePath;
 
 	@Autowired
-	RestTemplate restTemplate;
+	KeycloakRestTemplate restTemplate;
 
 	// SECOND USE CASE
 	@PostMapping("")
